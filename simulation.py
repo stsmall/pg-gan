@@ -350,8 +350,9 @@ def simulate_KF(params, sample_sizes, L, seed, prior=[], weights=[]):
             if f"pop_{pop_id}" not in source_list:
                 demo_events.add_population_parameters_change(time=times, initial_size=value, population=f"pop_{pop_id}", growth_rate=0)
         elif "mig" in event:
-            pop_id = list(event.lstrip("mig"))
-            if all(f"pop_{i}" not in source_list for i in pop_id):
+            pops = list(event.lstrip("mig"))
+            pop_id = [f"pop_{i}" for i in pops]
+            if all(i not in source_list for i in pop_id):
                 if asymmetric_mig:
                     # asym
                     if value > 0:

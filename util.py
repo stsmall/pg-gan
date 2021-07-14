@@ -69,9 +69,9 @@ class ParamSet:
     def __init__(self):
 
         # default Ne and reco and mut
-        self.Ne = Parameter(10000, 1000, 30000, "Ne")
-        self.reco = Parameter(1.25e-8, 1e-9, 1e-7, "reco")
-        self.mut = Parameter(1.25e-8, 1e-9, 1e-7, "mut")
+        self.Ne = Parameter(200000, 50000, 500000, "Ne")
+        self.reco = Parameter(3.89e-8, 1.6424e-8,  6.35109e-8, "reco")
+        self.mut = Parameter(2.8e-9, 1e-9, 6.1e-9, "mut")
 
         # IM
         self.N_anc = Parameter(15000, 1000, 25000, "N_anc")

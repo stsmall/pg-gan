@@ -105,12 +105,52 @@ class ParamSet:
         self.m_AF_EU = Parameter(3e-5, 0.0,  0.01, "m_AF_EU")
         self.m_AF_AS = Parameter(1.9e-5, 0.0, 0.01, "m_AF_AS")
         self.m_EU_AS = Parameter(9.6e-5, 0.0, 0.01, "m_EU_AS")
+        
+        # KF
+        self.N1 = Parameter(83000, 45000, 130000, "N1")
+        self.T_N1_1 = Parameter(1000, 500, 2000, "T_N1_1")
+        self.N1_1 = Parameter(170000, 30000, 200000, "N1_1")
+        self.T_N1_2 = Parameter(3000, 4000, 6000, "T_N1_2")
+        self.N1_2 = Parameter(190000, 30000, 200000, "N1_2")
+        self.T_N1_3 = Parameter(9000, 7000, 12000, "T_N1_3")
+        self.N1_3 = Parameter(70000, 30000, 100000, "N1_3")
+        
+        self.N2 = Parameter(1340000, 400000, 4000000, "N2")
+        self.T_N2_1 = Parameter(1000, 500, 2000, "T_N2_1")         
+        self.N2_1 = Parameter(1500000, 300000, 1000000, "N2_1")
+        self.T_N2_2 = Parameter(3000, 4000, 6000, "T_N2_2")
+        self.N2_2 = Parameter(190000, 100000, 200000, "N2_2") 
+        self.T_N2_3 = Parameter(9000, 7000, 12000, "T_N2_3")
+        self.N2_3 = Parameter(60000, 30000, 100000, "N2_3") 
+
+        self.N_anc = Parameter(50000, 10000, 100000, "N_anc")
+        self.T_N_anc1 = Parameter(30000, 20000, 40000, "T_N_anc1")
+        self.N_anc1 = Parameter(20000, 10000, 50000, "N_anc1")
+        self.T_N_anc2 = Parameter(60000, 50000, 70000, "T_N_anc2")
+        self.N_anc2 = Parameter(20000, 10000, 50000, "N_anc2")
+       
+        self.T_mig = Parameter(1000, 500, 2000, "T_mig")  # first switch
+        self.mig = self.mig = Parameter(0.003, 0, 0.03, "mig")  # 0
+        #self.mig = self.mig = Parameter(0, -0.03, 0.03, "mig")  # 0 
+        self.T_mig1 = Parameter(4000, 2800, 4700, "T_mig1")  # second switch
+        self.mig1 = self.mig = Parameter(0.003, 0, 0.03, "mig1")
+        #self.mig1 = self.mig = Parameter(0, -0.03, 0.03, "mig1")
+        self.T_mig2 = Parameter(5000, 5000, 7000, "T_mig2")  # mig 
+        self.mig2 = self.mig = Parameter(0.003, 0, 0.03, "mig2")
+        #self.mig2 = self.mig = Parameter(0, -0.03, 0.03, "mig2")
+        self.T_mig0 = Parameter(8000, 8000, 10000, "T_mig0") # mig off
+        
+        self.T_split = self.T_split = Parameter(8000, 5000, 13000, "T_split")
 
         self.all = [self.Ne, self.reco, self.mut, \
             self.N_anc, self.T_split, self.mig, self.N1, self.N2, self.growth, \
             self.N3, self.T1, self.T2, self.N_A, self.N_B, self.N_AF, \
             self.N_EU0, self.N_AS0, self.r_EU, self.r_AS, self.T_AF, self.T_B, \
-            self.T_EU_AS, self.m_AF_B, self.m_AF_EU, self.m_AF_AS, self.m_EU_AS]
+            self.T_EU_AS, self.m_AF_B, self.m_AF_EU, self.m_AF_AS, self.m_EU_AS,
+            self.T_N1_1, self.N1_1, self.T_N1_2, self.N1_2, self.T_N1_3, self.N1_3,
+            self.T_N2_1, self.N2_1, self.T_N2_2, self.N2_2, self.T_N2_3, self.N2_3,
+            self.T_mig, self.mig1, self.T_mig1, self.mig2, self.T_mig2, self.T_mig0,
+            self.T_N_anc1, self.N_anc1, self.T_N_anc2, self.N_anc2]
 
     def update(self, names, values):
         """Based on generator proposal, update desired param values"""
@@ -172,6 +212,50 @@ class ParamSet:
                 self.m_AF_AS.value = values[j]
             elif param == "m_EU_AS":
                 self.m_EU_AS.value = values[j]
+            elif param == "T_N1_1 ":
+                self.T_N1_1.value = values[j] 
+            elif param == "N1_1":
+                self.N1_1.value = values[j]
+            elif param == "T_N1_2":
+                self.T_N1_2.value = values[j] 
+            elif param == "N1_2":
+                self.N1_2.value = values[j]
+            elif param == "T_N1_3":
+                self.T_N1_3.value = values[j] 
+            elif param == "N1_3":
+                self.N1_3.value = values[j] 
+            elif param == "T_N2_1":
+                self.T_N2_1.value = values[j] 
+            elif param == "N2_1":
+                self.N2_1.value = values[j] 
+            elif param == "T_N2_2":
+                self.T_N2_2.value = values[j] 
+            elif param == "N2_2":
+                self.N2_2.value = values[j] 
+            elif param == "T_N2_3":
+                self.T_N2_3.value = values[j] 
+            elif param == "N2_3":
+                self.N2_3.value = values[j] 
+            elif param == "T_mig":
+                self.T_mig.value = values[j]      
+            elif param == "mig1":
+                self.mig1.value = values[j] 
+            elif param == "T_mig1":
+                self.T_mig1.value = values[j] 
+            elif param == "mig2":
+                self.mig2.value = values[j] 
+            elif param == "T_mig2":
+                self.T_mig2.value = values[j] 
+            elif param == "T_N_anc1":
+                self.T_N_anc1.value = values[j] 
+            elif param == "N_anc1":
+                self.N_anc1.value = values[j] 
+            elif param == "T_N_anc2":
+                self.T_N_anc2.value = values[j]
+            elif param == "N_anc2":
+                self.N_anc2.value = values[j]
+            elif param == "T_mig0":
+                self.T_mig0.value = values[j]
             else:
                 sys.exit(param + " is not a recognized parameter.")
 
@@ -357,6 +441,7 @@ def parse_hapmap_empirical_prior(files):
 
 def read_demo_file(filename, Ne):
     """Read in a PSMC-like demography"""
+    import msprime
     demos = []
     with open(filename, 'r') as demo_file:
         for pop_params in demo_file:

@@ -130,6 +130,19 @@ def process_opts(opts):
             sample_sizes[1], sample_sizes[2])
         simulator = simulation.simulate_ooa3
 
+    elif opts.model == 'KF':
+        sample_sizes = [148,148]
+        discriminator = discriminators.TwoPopModel(sample_sizes[0], \
+            sample_sizes[1])
+        simulator = simulation.simulate_KF
+
+    elif opts.model == 'KFM':
+        sample_sizes = [12,12,12]
+        #per_pop = int(num_samples/3) # assume equal
+        discriminator = discriminators.ThreePopModel(sample_sizes[0], \
+            sample_sizes[1], sample_sizes[2])
+        simulator = simulation.simulate_KFM
+
     # no other options
     else:
         sys.exit(opts.model + " is not recognized")

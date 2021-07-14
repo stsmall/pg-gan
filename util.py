@@ -266,9 +266,6 @@ def parse_params(param_input, all_params):
     for p in all_params.all:
         if p.name in param_strs:
             parameters.append(p)
-        else:
-            print(p.name)
-    breakpoint()
     assert len(parameters) == len(param_strs)
     for p in parameters:
         print(p)

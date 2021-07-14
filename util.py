@@ -146,10 +146,10 @@ class ParamSet:
             self.N_anc, self.T_split, self.mig, self.N1, self.N2, self.growth, \
             self.N3, self.T1, self.T2, self.N_A, self.N_B, self.N_AF, \
             self.N_EU0, self.N_AS0, self.r_EU, self.r_AS, self.T_AF, self.T_B, \
-            self.T_EU_AS, self.m_AF_B, self.m_AF_EU, self.m_AF_AS, self.m_EU_AS,
-            self.T_N1_1, self.N1_1, self.T_N1_2, self.N1_2, self.T_N1_3, self.N1_3,
-            self.T_N2_1, self.N2_1, self.T_N2_2, self.N2_2, self.T_N2_3, self.N2_3,
-            self.T_mig, self.mig1, self.T_mig1, self.mig2, self.T_mig2, self.T_mig0,
+            self.T_EU_AS, self.m_AF_B, self.m_AF_EU, self.m_AF_AS, self.m_EU_AS, \
+            self.T_N1_1, self.N1_1, self.T_N1_2, self.N1_2, self.T_N1_3, self.N1_3, \
+            self.T_N2_1, self.N2_1, self.T_N2_2, self.N2_2, self.T_N2_3, self.N2_3, \
+            self.T_mig, self.mig1, self.T_mig1, self.mig2, self.T_mig2, self.T_mig0, \
             self.T_N_anc1, self.N_anc1, self.T_N_anc2, self.N_anc2]
 
     def update(self, names, values):

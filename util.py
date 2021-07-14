@@ -212,7 +212,7 @@ class ParamSet:
                 self.m_AF_AS.value = values[j]
             elif param == "m_EU_AS":
                 self.m_EU_AS.value = values[j]
-            elif param == "T_N1_1 ":
+            elif param == "T_N1_1":
                 self.T_N1_1.value = values[j] 
             elif param == "N1_1":
                 self.N1_1.value = values[j]

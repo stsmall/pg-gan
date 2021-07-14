@@ -380,7 +380,7 @@ def simulate_KF(params, sample_sizes, L, seed, prior=[], weights=[]):
                                 random_seed = seed)
     ts = msprime.sim_mutations(tree,
                                rate=params.mut.value,
-                               model="InfiniteAlleles",
+                               model="infinite_alleles",
                                random_seed = seed)
 
     return ts

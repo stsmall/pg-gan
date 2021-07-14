@@ -297,14 +297,14 @@ def simulate_KF(params, sample_sizes, L, seed, prior=[], weights=[]):
     N2 = params.N2.value
 
     # pop1
-    T_N1_1 = params.T_N1.value
+    T_N1_1 = params.T_N1_1.value
     N1_1 = params.N1_1.value
     T_N1_2 = params.T_N1_2.value
     N1_2 = params.N1_2.value
     T_N1_3 = params.T_N1_3.value
     N1_3 = params.N1_3.value
     # pop2    
-    T_N2_1 = params.T_N2.value
+    T_N2_1 = params.T_N2_1.value
     N2_1 = params.N2_1.value
     T_N2_2 = params.T_N2_2.value
     N2_2 = params.N2_2.value

@@ -133,11 +133,11 @@ class ParamSet:
         self.mig = self.mig = Parameter(0.003, 0.0, 0.05, "mig")  # 0
         #self.mig = self.mig = Parameter(0, -0.03, 0.03, "mig")  # 0 
         self.T_mig1 = Parameter(4000, 2800, 4700, "T_mig1")  # second switch
-        self.mig1 = self.mig = Parameter(0.003, 0.0, 0.05, "mig1")
-        #self.mig1 = self.mig = Parameter(0, -0.03, 0.03, "mig1")
-        self.T_mig2 = Parameter(5000, 5000, 7000, "T_mig2")  # mig 
-        self.mig2 = self.mig = Parameter(0.003, 0.0, 0.05, "mig2")
-        #self.mig2 = self.mig = Parameter(0, -0.03, 0.03, "mig2")
+        self.mig1 = self.mig1 = Parameter(0.003, 0.0, 0.05, "mig1")
+        #self.mig1 = self.mig1 = Parameter(0, -0.03, 0.03, "mig1")
+        self.T_mig2 = Parameter(5000, 5000, 7000, "T_mig2")  # third switch 
+        self.mig2 = self.mig2 = Parameter(0.003, 0.0, 0.05, "mig2")
+        #self.mig2 = self.mig2 = Parameter(0, -0.03, 0.03, "mig2")
         self.T_mig0 = Parameter(8000, 8000, 10000, "T_mig0") # mig off
         
         self.T_split = self.T_split = Parameter(8000, 5000, 13000, "T_split")
